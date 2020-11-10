@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IncidenciasBol</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="ubicacion">Ubicacion de la incidencia</string>
+    <string name="descripcion">Descripcion Breve</string>
+    <string name="botonGuardar">Guardar</string>
+    <string name="botonSalir">Salir</string>
+    <string name="fotosincidencia">Fotos de la incidencia</string>
+    <string name="descripcionincidencia">Descripcion de la incidencia</string>
+    <string name="tipotext">Tipo</string>
+</resources>
