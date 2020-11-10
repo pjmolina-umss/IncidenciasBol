@@ -84,6 +84,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 mMap.addMarker(new MarkerOptions().position(miUbicacion).title("Ubicacion Incidencia"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
+                mMap.getUiSettings().setZoomControlsEnabled(true);
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(miUbicacion)
                         .zoom(18)

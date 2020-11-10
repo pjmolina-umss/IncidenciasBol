@@ -8,4 +8,5 @@
     <string name="fotosincidencia">Fotos de la incidencia</string>
     <string name="descripcionincidencia">Descripcion de la incidencia</string>
     <string name="tipotext">Tipo</string>
+    <string name="botonAceptar">Aceptar</string>
 </resources>
