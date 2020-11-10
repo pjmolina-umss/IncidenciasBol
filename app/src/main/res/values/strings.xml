@@ -9,4 +9,5 @@
     <string name="descripcionincidencia">Descripcion de la incidencia</string>
     <string name="tipotext">Tipo</string>
     <string name="botonAceptar">Aceptar</string>
+    <string name="botonOk">Ok</string>
 </resources>
