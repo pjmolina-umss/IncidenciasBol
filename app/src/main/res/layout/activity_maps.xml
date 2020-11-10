@@ -17,7 +17,15 @@
         android:id="@+id/botonOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="CapturarUbicacion"
         android:text="@string/botonOk" />
+
+    <TextView
+        android:id="@+id/textUbicacion"
+        android:layout_width="305dp"
+        android:layout_height="55dp"
+        android:layout_alignRight="@id/map"
+        android:layout_alignEnd="@id/map" />
 
 
 </RelativeLayout>

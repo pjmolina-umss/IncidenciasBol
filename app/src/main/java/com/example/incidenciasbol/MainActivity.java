@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageFoto1,imageFoto2,imageUbica;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        String ubicacionCapturada=getIntent().getStringExtra("ubicacionDeMapa");
+
+
+            textUbicacion.setText(ubicacionCapturada);
 
 
     }

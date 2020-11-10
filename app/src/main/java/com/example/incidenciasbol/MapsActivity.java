@@ -6,11 +6,15 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,6 +28,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private Button botonOk;
+    private TextView textCapUbicacion;
+    private Double lat,lng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        textCapUbicacion=(TextView)findViewById(R.id.textUbicacion);
+
         getLocalizacion();
     }
 
@@ -79,8 +89,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void onLocationChanged(Location location) {
                 LatLng miUbicacion = new LatLng(location.getLatitude(), location.getLongitude());
                 String dondeEstoy;
-                dondeEstoy=miUbicacion.toString();
-                Toast.makeText(MapsActivity.this, dondeEstoy, Toast.LENGTH_LONG).show();
+                lat=miUbicacion.latitude;
+                lng=miUbicacion.longitude;
+                dondeEstoy=lat+", "+lng;
+                textCapUbicacion.setText(dondeEstoy);
+                //Toast.makeText(MapsActivity.this, dondeEstoy, Toast.LENGTH_LONG).show();
 
                 mMap.addMarker(new MarkerOptions().position(miUbicacion).title("Ubicacion Incidencia"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(miUbicacion));
@@ -113,5 +126,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
 
+    }
+
+    public void CapturarUbicacion(View view){
+        Intent i=new Intent(this,MainActivity.class);
+        i.putExtra("ubicacionDeMapa",textCapUbicacion.getText().toString());
+        i.putExtra("latitud", lat);
+        i.putExtra("longitud", lng);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 }
