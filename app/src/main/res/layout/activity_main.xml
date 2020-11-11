@@ -22,7 +22,6 @@
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
         android:duplicateParentState="false"
-        android:editable="false"
         android:ems="10"
         android:enabled="false"
         android:hint="@string/ubicacion"
@@ -57,26 +56,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textUbicacion"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
-    <EditText
-        android:id="@+id/textDescripcion"
-        android:layout_width="271dp"
-        android:layout_height="134dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="@string/descripcion"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:text="@string/descripcion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foto2" />
-
     <Button
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="44dp"
         android:text="@string/botonGuardar"
         app:layout_constraintEnd_toStartOf="@+id/botonSalir"
         app:layout_constraintHorizontal_bias="0.0"
@@ -87,9 +72,9 @@
         android:id="@+id/botonSalir"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:text="@string/botonSalir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescripcion" />
@@ -136,5 +121,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerTipo"
         app:srcCompat="@android:drawable/ic_dialog_map" />
+
+    <EditText
+        android:id="@+id/textDescripcion"
+        android:layout_width="285dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/descripcion"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foto2"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
