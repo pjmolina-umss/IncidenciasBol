@@ -10,4 +10,5 @@
     <string name="tipotext">Tipo</string>
     <string name="botonAceptar">Aceptar</string>
     <string name="botonOk">Ok</string>
+    <string name="botonCamara">Foto</string>
 </resources>
